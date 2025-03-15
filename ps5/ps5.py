@@ -89,7 +89,9 @@ def pix_to_img(pixels_list, size, mode):
     returns:
         img: Image object made from list of pixels
     """
-    return PIL.Image.frombytes(mode, size, pixels_list)
+    newimg = Image.new(mode, size)
+    newimg.putdata(pixels_list)
+    return newimg
 
 
 def filter(pixels_list, color):
@@ -105,9 +107,10 @@ def filter(pixels_list, color):
     nlist = []
     for i in pixels_list:
         nmatrix = matrix_multiply(matrix, i)
-        for j in nmatrix:
+        for j in range(len(nmatrix)):
             nmatrix[j] = int(nmatrix[j])
         nlist.append(tuple(nmatrix))
+    return nlist
 
 
 def extract_end_bits(num_end_bits, pixel):
@@ -140,7 +143,14 @@ def extract_end_bits(num_end_bits, pixel):
     Returns:
         The num_end_bits of pixel, as an integer (BW) or tuple of integers (RGB).
     """
-    pass
+    temp = 2**num_end_bits
+    if type(pixel) == int:
+        return pixel%temp
+    else:
+        newpix = []
+        for i in pixel:
+            newpix.append(i%temp)
+        return tuple(newpix)
 
 
 def reveal_bw_image(filename):
@@ -151,7 +161,12 @@ def reveal_bw_image(filename):
     Returns:
         result: an Image object containing the hidden image
     """
-    pass
+    with Image.open(filename) as im:
+        oldpix = img_to_pix(filename)
+        newpix = []
+        for i in oldpix:
+            newpix.append(extract_end_bits(1, i) * 255)
+        return pix_to_img(newpix, im.size, 'L')
 
 
 def reveal_color_image(filename):
@@ -162,7 +177,17 @@ def reveal_color_image(filename):
     Returns:
         result: an Image object containing the hidden image
     """
-    pass
+    with Image.open(filename) as im:
+        oldpix = img_to_pix(filename)
+        newpix = []
+        for i in oldpix:
+            bits = list(extract_end_bits(3, i))
+            for j in range(len(bits)):
+                bits[j] = int(bits[j]* 36.43) 
+            newpix.append(tuple(bits))
+                
+        print(newpix)
+        return pix_to_img(newpix, im.size, 'RGB')
 
 
 def reveal_image(filename):
@@ -205,27 +230,27 @@ def draw_kerb(filename, kerb):
 
 
 def main():
-
-
+    pass
+    
     # Uncomment the following lines to test part 1
 
-    im = Image.open('image_15.png')
-    width, height = im.size
-    pixels = img_to_pix('image_15.png')
+    # im = Image.open('image_15.png')
+    # width, height = im.size
+    # pixels = img_to_pix('image_15.png')
 
-    non_filtered_pixels = filter(pixels,'none')
-    im = pix_to_img(non_filtered_pixels, (width, height), 'RGB')
-    im.show()
-
-    red_filtered_pixels = filter(pixels,'red')
-    im2 = pix_to_img(red_filtered_pixels,(width,height), 'RGB')
-    im2.show()
-
-    # Uncomment the following lines to test part 2
-    #im = reveal_image('hidden1.bmp')
+    # non_filtered_pixels = filter(pixels,'none')
+    # im = pix_to_img(non_filtered_pixels, (width, height), 'RGB')
     # im.show()
 
-    #im2 = reveal_image('hidden2.bmp')
+    # red_filtered_pixels = filter(pixels,'red')
+    # im2 = pix_to_img(red_filtered_pixels,(width,height), 'RGB')
+    # im2.show()
+
+    # Uncomment the following lines to test part 2
+    # im = reveal_image('hidden1.bmp')
+    # im.show()
+
+    # im2 = reveal_image('hidden2.bmp')
     # im2.show()
     
 
