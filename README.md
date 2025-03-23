@@ -10,3 +10,8 @@ My journey on self learning the computer science undergraduate program.
 **ACHIEVEMENTS**
 1. Wrote my first ~500 lines of code.
 - Space invader final project for Systematic Program Design (Week 6A)
+
+2. Coded for ~12 hours straight.
+- Systematic Program Design - NQueens (Week 9B)
+- Most hardest question I have come across, especially the template blending between arbitrary-arity trees and generative recursion.
+- Very proud of myself when I have completed it. Never give up!
