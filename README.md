@@ -15,5 +15,5 @@ My journey on self learning the computer science undergraduate program.
 
 2. Coded for ~12 hours straight.
 - Systematic Program Design - NQueens (Week 9B)
-- Most hardest question I have come across, especially the template blending between arbitrary-arity trees and generative recursion.
+- Hardest question I have come across, especially the template blending between arbitrary-arity trees and generative recursion.
 - Very proud of myself when I have completed it. Never give up!
