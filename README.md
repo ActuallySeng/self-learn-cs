@@ -4,7 +4,7 @@ My journey on self learning the computer science undergraduate program.
 - https://ocw.mit.edu/courses/6-100l-introduction-to-cs-and-programming-using-python-fall-2022/pages/material-by-lecture/
 
 2. Systematic Program Design (Finished 24/3/2025)
-https://learning.edx.org/course/course-v1:UBCx+SPD1x+2T2015
+- https://learning.edx.org/course/course-v1:UBCx+SPD1x+2T2015
 
 3. 
 
