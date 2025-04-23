@@ -9,6 +9,9 @@ My journey on self learning the computer science undergraduate program.
 3. Class-based Program Design
 - https://course.ccs.neu.edu/cs2510sp22/index.html
 
+4. Programming Languages Part A
+- https://www.coursera.org/learn/programming-languages
+
 
 **ACHIEVEMENTS**
 1. Wrote my first ~500 lines of code.

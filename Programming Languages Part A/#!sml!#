@@ -1,0 +1,204 @@
+Standard ML of New Jersey v110.80 [built: Thu Aug 18 15:00:00 2016]
+- use "test.sml";
+[opening test.sml]
+val adds = fn : int * int -> int
+val x = 15 : int
+val it = () : unit
+- use "Test.sml";
+[opening Test.sml]
+val adds = fn : int * int -> int
+val x = 15 : int
+val it = () : unit
+- 
+
+Process sml finished
+Standard ML of New Jersey v110.80 [built: Thu Aug 18 15:00:00 2016]
+- use "Test.sml";[opening Test.sml]
+val adds = fn : int * int -> int
+val x = 15 : int
+val it = () : unit
+- [opening Test.sml]
+val adds = fn : int * int -> int
+val x = 15 : int
+val it = () : unival adds = fn : int * int -> int
+val x = 15 : int
+val it = () : unit
+- 
+
+Interrupt
+- stdIn:1.16-1.21 Error: syntax error: deleting  COLON ID
+stdIn:1.28-2.4 Error: syntax error: deleting  ARROW ID VAL
+stdIn:2.7-2.11 Error: syntax error: deleting  EQUALOP INT
+stdIn:3.1-3.9 Error: syntax error: deleting  VAL ID EQUALOP
+- use "Test.sml";
+[opening Test.sml]
+val adds = fn : int * int -> int
+val x = 15 : int
+val minuss = fn : int * int -> intval y = 7 : int
+val it = () : unit
+- val minuss = fn : int * int -> intval y = 7 : int
+val it = () : unit
+- 
+stdIn:5.17-5.22 Error: syntax error: deleting  COLON ID
+stdIn:5.29-5.38 Error: syntax error: deleting  ARROW ID
+stdIn:5.41-5.44 Error: syntax error: deleting  EQUALOP INT
+stdIn:6.1-6.9 Error: syntax error: deleting  VAL ID EQUALOP
+- 
+Terminate batch job (Y/N)? 
+
+Process sml finished
+Standard ML of New Jersey v110.80 [built: Thu Aug 18 15:00:00 2016]
+- y
+= es
+= 
+= 
+= ;
+stdIn:1.2 Error: unbound variable or constructor: y
+stdIn:2.1-2.3 Error: unbound variable or constructor: es
+- 
+
+Process sml finished
+Standard ML of New Jersey v110.80 [built: Thu Aug 18 15:00:00 2016]
+- use "Test.sml";[opening Test.sml]
+Test.sml:6.34-6.43 Error: non-constructor applied to argument in pattern: *
+Test.sml:6.30-6.43 Error: non-constructor applied to argument in pattern: t2
+Test.sml:7.19-7.21 Error: unbound variable or constructor: t2
+val it = () : unit
+- 
+
+Process sml finished
+Standard ML of New Jersey v110.80 [built: Thu Aug 18 15:00:00 2016]
+- use "Test.sml";
+[opening Test.sml]
+Test.sml:7.5-9.13 Error: operator is not a function [tycon mismatch]
+  operator: int
+  in expression:    ((fn {2=<pat>,...} => 2) t2) add2nd
+val it = () : unit
+- 
+
+Process sml finished
+Standard ML of New Jersey v110.80 [built: Thu Aug 18 15:00:00 2016]
+- use "Test.sml";
+[opening Test.sml]
+Test.sml:7.8 Error: unbound variable or constructor: t
+Test.sml:7.5-9.13 Error: operator is not a function [tycon mismatch]
+  operator: int
+  in expression:
+    ((fn {2=<pat>,...} => 2) t2) add2nd
+val it = () : unit- 
+
+Process sml finished
+Standard ML of New Jersey v110.80 [built: Thu Aug 18 15:00:00 2016]
+- use "Test.sml";
+[opening Test.sml]
+Test.sml:7.8 Error: unbound variable or constructor: t
+val it = () : unit
+- val it = () : unit- 
+
+= stdIn:2.19 Error: unbound type constructor: -
+- 
+
+Process sml finished
+Standard ML of New Jersey v110.80 [built: Thuug 18 15:00:00 2016]
+- use "Test.sml";
+[opening Test.sml]
+Test.sml:7.9 Error: unbound variable or constructor: t
+val it = () : unit
+- 
+
+Process sml finished
+Standard ML of New Jersey v110.80 [built: Thu Aug 18 15:00:00 2016]
+- use "Test.sml";
+[opening Test.sml]
+val x = (3,4) : int * int
+val y = (6,10) : int * int
+val add2nd = fn : (int * int) * (int * int) -> int
+val ans = 14 : int
+val it = () : unit
+- val a = [2, 3, 4, 5];
+val a = [2,3,4,5] : int list
+- 3::a
+= '
+stdIn:4.1 Error: illegal token
+- 3::a;
+val it = [3,2,3,4,5] : int list
+- 4::a;
+val it = [4,2,3,4,5] : int list
+- 
+Process sml finished
+Standard ML of New Jersey v110.80 [built: Thu Aug 18 15:00:00 2016]
+- use "Test.sml";
+[opening Test.sml]
+Test.sml:3.9 Error: syntax error: inserting  EQUALOP
+
+uncaught exception Compile [Compile: "syntax error"]
+  raised at: ../compiler/Parse/main/smlfile.sml:15.24-15.46
+             ../compiler/TopLevel/interact/evalloop.sml:42.54
+             ../compiler/TopLevel/interact/evalloop.sml:299.20-299.23
+- 
+
+Process sml finished
+Standard ML of New Jersey v110.80 [built: Thu Aug 18 15:00:00 2016]
+- use "Test.sml";
+[opening Test.sml]
+val y = 10 : int
+val test = fn : int -> int
+val it = () : unit
+- Process sml finished
+Standard ML of New Jersey v110.80 [built: Thu Aug 18 15:00:00 2016]
+- use "Test.sml";
+[opening Test.sml]
+Test.sml:16.1 Error: syntax error found at EOF
+
+uncaught exception Compile [Compile: "syntax error"]
+  raised at: ../compiler/Parse/main/smlfile.sml:15.24-15.46
+             ../compiler/TopLevel/interact/evalloop.sml:42.54
+             ../compiler/TopLevel/interact/evalloop.sml:299.20-299.23
+- 
+
+Process sml finished
+Standard ML of New Jersey v110.80 [built: Thu Aug 18 15:00:00 2016]
+- use "Test.sml";
+[opening Test.sml]
+Test.sml:16.1 Error: syntax error found at EOF
+
+uncaught exception Compile [Compile: "syntax error"]
+  raised at: ../compiler/Parse/main/smlfile.sml:15.24-15.46
+             ../compiler/TopLevel/interact/evalloop.sml:42.54
+             ../compiler/TopLevel/interact/evalloop.sml:299.20-299.23
+- 
+
+Process sml finished
+Standard ML of New Jersey v110.80 [built: Thu Aug 18 15:00:00 2016]
+- use "Test.sml";
+[opening Test.sml]
+Test.sml:16.1 Error: syntax error found at EOF
+
+uncaught exception Compile [Compile: "syntax error"]
+  raised at: ../compiler/Parse/main/smlfile.sml:15.24-15.46
+             ../compiler/TopLevel/interact/evalloop.sml:42.54
+             ../compiler/TopLevel/interact/evalloop.sml:299.20-299.23
+- 
+
+Process sml finished
+Standard ML of New Jersey v110.80 [built: Thu Aug 18 15:00:00 2016]
+- use "Test.sml";
+[opening Test.sml]
+Test.sml:10.18-10.52 Error: non-constructor applied to argument in pattern: sumofnonemptylistTest.sml:13.21-13.38 Error: unbound variable or constructor: sumofnonemptylist
+Test.sml:15.12-15.29 Error: unbound variable or constructor: sumofnonemptylist
+val it = () : unit
+- 
+
+Process sml finished
+Standard ML of New Jersey v110.80 [built: Thu Aug 18 15:00:00 2016]
+- use "Test.sml";
+[opening Test.sml]
+val listA = [1,2,3,4,5,6] : int list
+val MTList = [] : 'a list
+val sumoflist = fn : int list -> int option
+val it = () : unit
+- sumoflist([5,3,2]);
+val it = SOME 10 : int option
+- sumoflist([]);
+val it = NONE : int option
+- 

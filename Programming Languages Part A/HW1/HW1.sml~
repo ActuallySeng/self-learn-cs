@@ -1,0 +1,113 @@
+(* Date is (int * int * int) *)
+(* interp. A date, 1st int is year, 2nd month, 3rd day *)
+(* year is positive *)
+(* 1 <= month <= 12 *)
+(* 1 <= day <=  31 *)
+
+(* day of year is int[1, 365] *)
+(* interp. a day of the year *)
+
+(* Date -> Boolean *)
+(* Determines if date1 comes before date2 *)
+fun is_older(date1: (int * int * int), date2: (int * int * int)) =
+    if ((#1 date1) < (#1 date2))
+    then true
+    else if ((#1 date1) > (#1 date2))
+    then false
+    else
+	if ((#2 date1) < (#2 date2))
+	then true
+	else if ((#2 date1) > (#2 date2))
+	then false
+	else
+	    if ((#3 date1) < (#3 date2))
+	    then true
+	    else if ((#3 date1) > (#3 date2))
+	    then false
+	    else false
+
+(* Date list, int -> int) *)
+(* If date's month is in list, add count by 1. *)
+fun number_in_month(lod : (int * int * int) list, month : int) =
+    let
+	fun datechecker(lod_2 : (int * int * int) list, count : int) =
+	    if null lod_2
+	    then count
+	    else if #2 (hd lod_2) = month
+	    then datechecker(tl lod_2, count + 1)
+	    else datechecker(tl lod_2, count)
+    in
+	datechecker(lod, 0)
+    end
+
+(* Date list, int list -> int *)
+(* Number of dates in lod that are in any of the months in lom. *)
+fun number_in_months(lod : (int * int * int) list, lom: int list) =
+    if null lod orelse null lom
+    then 0
+    else number_in_month(lod, hd lom) + number_in_months(lod, tl lom)
+
+(* Date list * int -> Date list *)
+(* returns a list holding the dates from the argument list of dates that are in the month *)
+fun dates_in_month(lod : (int * int * int) list, month: int) =
+    if null lod
+    then lod
+    else
+	if #2 (hd lod) = month
+	then hd lod :: dates_in_month(tl lod, month)
+	else dates_in_month(tl lod, month)
+
+(* Date list * int list -> Date list *)
+(* returns a list holding the dates from the argument list of dates that are in any of the months in the list of months.*)
+fun dates_in_months(lod : (int * int * int) list, lom : int list) =
+    if null lod orelse null lom
+    then []
+    else
+	dates_in_month(lod, hd lom) @ dates_in_months(lod, tl lom);
+
+(* string list * int -> string *)
+(* Get the nth element in a list of strings. *)
+fun get_nth(los : string list, n : int) =
+    if n = 1
+    then hd los
+    else get_nth(tl los, n - 1);
+
+(* Date -> string *)
+(* Prints date out in a string format. *)
+(* Ex: January 20, 2013 *)
+fun date_to_string(date : int * int * int) =
+    let
+	val lom = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+	val month_index = #2 date;
+    in
+	get_nth(lom, #2 date) ^ " " ^ Int.toString(#3 date) ^ ", " ^ Int.toString(#1 date)
+    end;
+
+
+(* int * int list -> int *)
+(* return an int n such that the first n elements of the list add to less than sum *)
+fun number_before_reaching_sum(sum : int, loi : int list) =
+    if null loi
+    then 0
+    else
+	let
+	    fun helper(loi_2 : int list, current_sum : int, n : int) =
+		if (current_sum + hd loi_2) >= sum
+		then n
+		else helper(tl loi_2, current_sum + hd loi_2, n + 1);
+	in
+	    helper(loi, 0, 0)
+	end;
+
+(* int -> int *)
+(* consumes days in year, returns which month is it. *)
+fun what_month(days : int) =
+    let val lom = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
+    in
+	1 + number_before_reaching_sum(days, lom)
+    end;
+
+	
+	    
+
+	    

@@ -1,0 +1,7 @@
+HW1
+1. Don't always use let, sometimes there is an easier method.
+2. Read the questions properly before answering
+- tests might pass but your answer might not.
+
+HW2
+1. Remember what the return's type is, then you can work with the recursion.
