@@ -12,6 +12,12 @@ My journey on self learning the computer science undergraduate program.
 4. Programming Languages Part A
 - https://www.coursera.org/learn/programming-languages
 
+5. Programming Languages Part B
+- https://www.coursera.org/learn/programming-languages-part-b
+
+6. Programming Languages Part C
+- https://www.coursera.org/learn/programming-languages-part-c
+
 
 **ACHIEVEMENTS**
 1. Wrote my first ~500 lines of code.
